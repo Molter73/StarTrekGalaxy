@@ -8,13 +8,24 @@ package starTrekGalaxy;
  *
  */
 public class Planet {
-	static private final Integer speed = 1;        //  degrees / day
-	static private final Integer distance = 500;   //  kms from the sun
+	private Integer speed;     //  degrees / day
+	private Integer distance;  //  kms from the sun
 	
 	private Integer xPos;
     private Integer yPos;
     
-	/**
+    
+    
+	public Planet(Integer speed, Integer distance) throws NullPointerException{
+        super();
+        //  speed and distance can only be set at Planet creation time and are required.
+        if(speed == null || distance == null)
+            throw new NullPointerException();
+        
+        this.speed = speed;
+        this.distance = distance;
+    }
+    /**
      * @return the xPos
      */
     public Integer getxPos() {
@@ -41,13 +52,13 @@ public class Planet {
     /**
      * @return the speed
      */
-    public static Integer getSpeed() {
+    public Integer getSpeed() {
         return speed;
     }
     /**
      * @return the distance
      */
-    public static Integer getDistance() {
+    public Integer getDistance() {
         return distance;
     }
 }
