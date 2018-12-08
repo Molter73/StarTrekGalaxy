@@ -6,7 +6,7 @@ package starTrek.galaxy;
 import java.util.ArrayList;
 
 /**
- * @author Molter
+ * @author Mauro Moltrasio
  *
  */
 public class Galaxy {
@@ -48,7 +48,7 @@ public class Galaxy {
 	 * @param speed 	the speed at which the planet rotates
 	 * @param distance 	the distance from the sun to this planet
 	 */
-	public void add(Integer speed, Integer distance) {
+	public void add(Integer speed, Double distance) {
 		this.planets.add(new Planet(speed, distance));
 	}
 	

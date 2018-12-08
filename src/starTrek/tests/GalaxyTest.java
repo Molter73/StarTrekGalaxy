@@ -38,7 +38,7 @@ public class GalaxyTest {
 	@Test
 	public void testGalaxyArray() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		final ArrayList<Planet> planets = new ArrayList<Planet>();
-		final Planet planet = new Planet(10, 10);
+		final Planet planet = new Planet(10, 10d);
 		
 		planets.add(planet);
 		final Galaxy galaxyTest = new Galaxy(planets);
@@ -59,7 +59,7 @@ public class GalaxyTest {
 	 */
 	@Test
 	public void testGetPlanets() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-		final Planet planet = new Planet(10, 20);
+		final Planet planet = new Planet(10, 20d);
 		final ArrayList<Planet> planets = new ArrayList<Planet>();
 		final Galaxy galaxyTest = new Galaxy(); 
 		final Field field = galaxyTest.getClass().getDeclaredField("planets");
@@ -83,7 +83,7 @@ public class GalaxyTest {
 	@Test
 	public void testAddPlanet() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		final Galaxy galaxyTest = new Galaxy();
-		final Planet planet = new Planet(10, 20);
+		final Planet planet = new Planet(10, 20d);
 		final ArrayList<Planet> expectedPlanets = new ArrayList<Planet>();
 		final Field field = galaxyTest.getClass().getDeclaredField("planets");
 		field.setAccessible(true);
@@ -104,12 +104,12 @@ public class GalaxyTest {
 	@Test
 	public void testAddIntegerInteger() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		final Galaxy galaxyTest = new Galaxy();
-		final Planet planet = new Planet(10, 20);
+		final Planet planet = new Planet(10, 20d);
 		final ArrayList<Planet> expectedPlanets = new ArrayList<Planet>();
 		final Field field = galaxyTest.getClass().getDeclaredField("planets");
 		field.setAccessible(true);
 		
-		galaxyTest.add(10, 20);
+		galaxyTest.add(10, 20d);
 		expectedPlanets.add(planet);
 		
 		assertEquals(expectedPlanets, field.get(galaxyTest));
@@ -125,12 +125,12 @@ public class GalaxyTest {
 	@Test
 	public void testUpdatePositions() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
     	final Galaxy testGalaxy = new Galaxy();
-    	final Planet testPlanet = new Planet(1, 500000);
+    	final Planet testPlanet = new Planet(1, 500000d);
 		final ArrayList<Planet> expectedPlanets = new ArrayList<Planet>();
 		final Field planets = testGalaxy.getClass().getDeclaredField("planets");
 		planets.setAccessible(true);
 		
-		expectedPlanets.add(new Planet(1, 500000));
+		expectedPlanets.add(new Planet(1, 500000d));
 		expectedPlanets.get(0).updatePosition(10);
 		
     	testGalaxy.add(testPlanet);

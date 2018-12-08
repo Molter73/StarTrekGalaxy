@@ -4,20 +4,20 @@
 package starTrek.galaxy;
 
 /**
- * @author moltrasm
+ * @author Mauro Moltrasio
  *
  */
 public class Planet {
 	private Integer speed;     	//  degrees / day
-	private Integer distance;  	//  meters from the sun
+	private Double distance;  	//  meters from the sun
 	
 	//	We will work in meters from the sun distances with the minimum
 	//	distance being 500km, we can assume the errors from using integer
 	//	positions will not be important.
-	private Integer xPos;		
-    private Integer yPos;
+	private Double xPos;		
+    private Double yPos;
         
-	public Planet(Integer speed, Integer distance) throws NullPointerException{
+	public Planet(Integer speed, Double distance) throws NullPointerException{
         super();
         //  speed and distance can only be set at Planet creation time and are required.
         if(speed == null || distance == null)
@@ -29,30 +29,30 @@ public class Planet {
         // for a matter of simplicity in calculations, all planets start at
         // (xPos = distance, yPos = 0) making the initial angle 0° for all of them
         this.xPos = distance;
-        this.yPos = 0;
+        this.yPos = 0d;
     }
     /**
      * @return the xPos
      */
-    public Integer getxPos() {
+    public Double getxPos() {
         return xPos;
     }
     /**
      * @param xPos the xPos to set
      */
-    public void setxPos(Integer xPos) {
+    public void setxPos(Double xPos) {
         this.xPos = xPos;
     }
     /**
      * @return the yPos
      */
-    public Integer getyPos() {
+    public Double getyPos() {
         return yPos;
     }
     /**
      * @param yPos the yPos to set
      */
-    public void setyPos(Integer yPos) {
+    public void setyPos(Double yPos) {
         this.yPos = yPos;
     }
     /**
@@ -64,7 +64,7 @@ public class Planet {
     /**
      * @return the distance
      */
-    public Integer getDistance() {
+    public Double getDistance() {
         return distance;
     }
     /* (non-Javadoc)
@@ -125,7 +125,7 @@ public class Planet {
 		Double xPos = (this.getDistance() * Math.cos(Math.toRadians(traveledDegrees)));
 		Double yPos = (this.getDistance() * Math.sin(Math.toRadians(traveledDegrees)));
 		
-		this.setxPos(xPos.intValue());
-		this.setyPos(yPos.intValue());
+		this.setxPos(xPos);
+		this.setyPos(yPos);
 	}
 }

@@ -26,7 +26,7 @@ public class PlanetTest {
         Boolean distanceException = false;
         
         try {
-            new Planet(null, 1);
+            new Planet(null, 1d);
         } catch (NullPointerException ex) {
             speedException = true;
         }
@@ -46,14 +46,14 @@ public class PlanetTest {
      */
     @Test
     public void testGetxPos() throws NoSuchFieldException, IllegalAccessException {
-        final Planet testPlanet = new Planet(100, 100);
+        final Planet testPlanet = new Planet(100, 100d);
         final Field field = testPlanet.getClass().getDeclaredField("xPos");
         field.setAccessible(true);
-        field.set(testPlanet, 50);
+        field.set(testPlanet, 50d);
         
-        final Integer result = testPlanet.getxPos();
+        final Double result = testPlanet.getxPos();
 
-        assertEquals("Wrong xPos value", (Integer) 50, result);
+        assertEquals("Wrong xPos value", 50d, result, 0.001);
     }
 
     /**
@@ -61,14 +61,14 @@ public class PlanetTest {
      */
     @Test
     public void testSetxPos() throws NoSuchFieldException, IllegalAccessException{
-        final Planet testPlanet = new Planet(100, 100);
+        final Planet testPlanet = new Planet(100, 100d);
         
-        testPlanet.setxPos(50);
+        testPlanet.setxPos(50d);
         
         final Field field = testPlanet.getClass().getDeclaredField("xPos");
         field.setAccessible(true);
         
-        assertEquals("Wrong xPos value", 50, field.get(testPlanet));
+        assertEquals("Wrong xPos value", 50d, field.get(testPlanet));
     }
 
     /**
@@ -76,14 +76,14 @@ public class PlanetTest {
      */
     @Test
     public void testGetyPos() throws NoSuchFieldException, IllegalAccessException{
-        final Planet testPlanet = new Planet(100, 100);
+        final Planet testPlanet = new Planet(100, 100d);
         final Field field = testPlanet.getClass().getDeclaredField("yPos");
         field.setAccessible(true);
-        field.set(testPlanet, 50);
+        field.set(testPlanet, 50d);
         
-        final Integer result = testPlanet.getyPos();
+        final Double result = testPlanet.getyPos();
 
-        assertEquals("Wrong yPos value", (Integer) 50, result);
+        assertEquals("Wrong yPos value", 50d, result, 0.001);
     }
 
     /**
@@ -91,14 +91,14 @@ public class PlanetTest {
      */
     @Test
     public void testSetyPos() throws NoSuchFieldException, IllegalAccessException{
-        final Planet testPlanet = new Planet(100, 100);
+        final Planet testPlanet = new Planet(100, 100d);
         
-        testPlanet.setyPos(50);
+        testPlanet.setyPos(50d);
         
         final Field field = testPlanet.getClass().getDeclaredField("yPos");
         field.setAccessible(true);
         
-        assertEquals("Wrong xPos value", 50, field.get(testPlanet));
+        assertEquals("Wrong xPos value", 50d, field.get(testPlanet));
     }
 
     /**
@@ -106,7 +106,7 @@ public class PlanetTest {
      */
     @Test
     public void testGetSpeed() throws NoSuchFieldException, IllegalAccessException{
-        final Planet testPlanet = new Planet(100, 100);
+        final Planet testPlanet = new Planet(100, 100d);
         final Field field = testPlanet.getClass().getDeclaredField("speed");
         field.setAccessible(true);
         
@@ -122,15 +122,15 @@ public class PlanetTest {
      */
     @Test
     public void testGetDistance() throws NoSuchFieldException, IllegalAccessException{
-        final Planet testPlanet = new Planet(100, 100);
+        final Planet testPlanet = new Planet(100, 100d);
         final Field field = testPlanet.getClass().getDeclaredField("distance");
         field.setAccessible(true);
         
-        field.set(testPlanet, 200);
+        field.set(testPlanet, 200d);
         
-        final Integer result = testPlanet.getDistance();
+        final Double result = testPlanet.getDistance();
         
-        assertEquals("Wrong distance value", (Integer) 200, result);
+        assertEquals("Wrong distance value", 200d, result, 0.001);
     }
 
     /**
@@ -138,9 +138,9 @@ public class PlanetTest {
      */
     @Test
     public void testEquals() {
-    	Planet planetTest = new Planet(10, 20);
+    	Planet planetTest = new Planet(10, 20d);
     	
-    	assertEquals(new Planet(10,20), planetTest);
+    	assertEquals(new Planet(10,20d), planetTest);
     }
 
     /**
@@ -152,7 +152,7 @@ public class PlanetTest {
      */
     @Test
     public void testUpdatePosition() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-    	final Planet testPlanet = new Planet(1, 500000);
+    	final Planet testPlanet = new Planet(1, 500000d);
     	final Field xPos = testPlanet.getClass().getDeclaredField("xPos");
     	final Field yPos = testPlanet.getClass().getDeclaredField("yPos");
     	
@@ -161,10 +161,10 @@ public class PlanetTest {
     	
     	testPlanet.updatePosition(10);
     	
-    	final Double xResult = 500000 * Math.cos(Math.toRadians(10));
-    	final Double yResult = 500000 * Math.sin(Math.toRadians(10));
+    	final Double xResult = 500000d * Math.cos(Math.toRadians(10));
+    	final Double yResult = 500000d * Math.sin(Math.toRadians(10));
     	
-    	assertEquals(xResult.intValue(), xPos.get(testPlanet));
-    	assertEquals(yResult.intValue(), yPos.get(testPlanet));
+    	assertEquals(xResult, xPos.get(testPlanet));
+    	assertEquals(yResult, yPos.get(testPlanet));
     }
 }
