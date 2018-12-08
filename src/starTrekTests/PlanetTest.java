@@ -133,4 +133,13 @@ public class PlanetTest {
         assertEquals("Wrong distance value", (Integer) 200, result);
     }
 
+    /**
+     * Test method for {@link starTrekGalaxy.Planet.equals()}
+     */
+    @Test
+    public void testEquals() {
+    	Planet planetTest = new Planet(10, 20);
+    	
+    	assertEquals(new Planet(10,20), planetTest);
+    }
 }

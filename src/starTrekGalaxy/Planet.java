@@ -61,4 +61,52 @@ public class Planet {
     public Integer getDistance() {
         return distance;
     }
+    /* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((distance == null) ? 0 : distance.hashCode());
+		result = prime * result + ((speed == null) ? 0 : speed.hashCode());
+		result = prime * result + ((xPos == null) ? 0 : xPos.hashCode());
+		result = prime * result + ((yPos == null) ? 0 : yPos.hashCode());
+		return result;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Planet other = (Planet) obj;
+		if (distance == null) {
+			if (other.distance != null)
+				return false;
+		} else if (!distance.equals(other.distance))
+			return false;
+		if (speed == null) {
+			if (other.speed != null)
+				return false;
+		} else if (!speed.equals(other.speed))
+			return false;
+		if (xPos == null) {
+			if (other.xPos != null)
+				return false;
+		} else if (!xPos.equals(other.xPos))
+			return false;
+		if (yPos == null) {
+			if (other.yPos != null)
+				return false;
+		} else if (!yPos.equals(other.yPos))
+			return false;
+		return true;
+	}
+
 }
