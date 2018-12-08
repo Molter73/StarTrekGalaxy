@@ -40,12 +40,17 @@ public class Line {
 	 */
 	public Line(Double x1, Double y1, Double x2, Double y2) {
 		super();
-		try {
-			this.slope = (y1-y2) / (x1-x2);
-		} catch (ArithmeticException e) {
-			throw e;
-		}
-		this.intercept = y1 - (x1 * this.slope);
+		this.slope = (y1-y2) / (x1-x2);
+		
+		/**
+		 * if the slope is infinite, there wont be an intercept.
+		 * Instead, I will save the x value for the vertical line,
+		 */
+		
+		if (Double.isInfinite(this.slope))
+			this.intercept = x1;
+		else
+			this.intercept = y1 - (x1 * this.slope);
 	}
 	/**
 	 * @return the gradient
@@ -112,6 +117,17 @@ public class Line {
 	 * @param yPos the position of the point along the y axis
 	 */
 	public boolean containsPoint(Double xPos, Double yPos) {
-		return false;
+		if (Double.isInfinite(this.slope)) {
+			if (this.intercept.equals(xPos)) {
+				return true;
+			}
+			return false;
+		} else {	// check to see if point is in this line
+			Double calcY = (xPos * this.slope) + this.intercept;
+			if(calcY.equals(yPos)) {
+				return true;
+			} 
+			return false;
+		}
 	}
 }

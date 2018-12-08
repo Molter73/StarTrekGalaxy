@@ -138,9 +138,15 @@ public class PlanetTest {
      */
     @Test
     public void testEquals() {
-    	Planet planetTest = new Planet(10, 20d);
+    	final Planet planetTest = new Planet(10, 20d);
     	
+    	assertEquals(planetTest, planetTest);
     	assertEquals(new Planet(10,20d), planetTest);
+    	assertNotEquals(null, planetTest);
+    	assertNotEquals(planetTest, null);
+    	assertNotEquals(planetTest, new Object());
+    	assertNotEquals(new Planet(20, 20d), planetTest);
+    	assertNotEquals(new Planet(10, 10d), planetTest);
     }
 
     /**

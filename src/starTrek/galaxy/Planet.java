@@ -11,9 +11,6 @@ public class Planet {
 	private Integer speed;     	//  degrees / day
 	private Double distance;  	//  meters from the sun
 	
-	//	We will work in meters from the sun distances with the minimum
-	//	distance being 500km, we can assume the errors from using integer
-	//	positions will not be important.
 	private Double xPos;		
     private Double yPos;
         
