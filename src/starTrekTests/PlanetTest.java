@@ -142,4 +142,29 @@ public class PlanetTest {
     	
     	assertEquals(new Planet(10,20), planetTest);
     }
+
+    /**
+     * Test method for {@link starTrekGalaxy.Planet.updatePosition(java.lang.Integer)}
+     * @throws SecurityException 
+     * @throws NoSuchFieldException 
+     * @throws IllegalAccessException 
+     * @throws IllegalArgumentException 
+     */
+    @Test
+    public void testUpdatePosition() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+    	final Planet testPlanet = new Planet(1, 500000);
+    	final Field xPos = testPlanet.getClass().getDeclaredField("xPos");
+    	final Field yPos = testPlanet.getClass().getDeclaredField("yPos");
+    	
+    	xPos.setAccessible(true);
+    	yPos.setAccessible(true);
+    	
+    	testPlanet.updatePosition(10);
+    	
+    	final Double xResult = 500000 * Math.cos(Math.toRadians(10));
+    	final Double yResult = 500000 * Math.sin(Math.toRadians(10));
+    	
+    	assertEquals(xResult.intValue(), xPos.get(testPlanet));
+    	assertEquals(yResult.intValue(), yPos.get(testPlanet));
+    }
 }

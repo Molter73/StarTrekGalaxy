@@ -51,4 +51,14 @@ public class Galaxy {
 	public void add(Integer speed, Integer distance) {
 		this.planets.add(new Planet(speed, distance));
 	}
+	
+	/**
+	 * Update the position of planets for a given day
+	 * @param elapsedDays the amounts of days elapsed
+	 */
+	public void updatePositions(Integer elapsedDays) {
+		for(Planet planet : this.planets) {
+			planet.updatePosition(elapsedDays);
+		}
+	}
 }

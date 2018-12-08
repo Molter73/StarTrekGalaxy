@@ -8,14 +8,15 @@ package starTrekGalaxy;
  *
  */
 public class Planet {
-	private Integer speed;     //  degrees / day
-	private Integer distance;  //  kms from the sun
+	private Integer speed;     	//  degrees / day
+	private Integer distance;  	//  meters from the sun
 	
-	private Integer xPos;
+	//	We will work in meters from the sun distances with the minimum
+	//	distance being 500km, we can assume the errors from using integer
+	//	positions will not be important.
+	private Integer xPos;		
     private Integer yPos;
-    
-    
-    
+        
 	public Planet(Integer speed, Integer distance) throws NullPointerException{
         super();
         //  speed and distance can only be set at Planet creation time and are required.
@@ -24,6 +25,11 @@ public class Planet {
         
         this.speed = speed;
         this.distance = distance;
+        
+        // for a matter of simplicity in calculations, all planets start at
+        // (xPos = distance, yPos = 0) making the initial angle 0° for all of them
+        this.xPos = distance;
+        this.yPos = 0;
     }
     /**
      * @return the xPos
@@ -108,5 +114,18 @@ public class Planet {
 			return false;
 		return true;
 	}
+	/**
+	 * Update the position of the planet for a given amount of days
+	 * elapsed from its creation
+	 */
+	public void updatePosition(Integer elapsedDays) {
+		double traveledDegrees = this.getSpeed() * elapsedDays;
 
+		// calculate the position of the planet for the given day
+		Double xPos = (this.getDistance() * Math.cos(Math.toRadians(traveledDegrees)));
+		Double yPos = (this.getDistance() * Math.sin(Math.toRadians(traveledDegrees)));
+		
+		this.setxPos(xPos.intValue());
+		this.setyPos(yPos.intValue());
+	}
 }

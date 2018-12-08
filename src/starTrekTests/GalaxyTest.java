@@ -115,4 +115,27 @@ public class GalaxyTest {
 		assertEquals(expectedPlanets, field.get(galaxyTest));
 	}
 
+	/**
+	 * Test method for {@link starTrekGalaxy.update}
+	 * @throws SecurityException 
+	 * @throws NoSuchFieldException 
+	 * @throws IllegalAccessException 
+	 * @throws IllegalArgumentException 
+	 */
+	@Test
+	public void testUpdatePositions() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+    	final Galaxy testGalaxy = new Galaxy();
+    	final Planet testPlanet = new Planet(1, 500000);
+		final ArrayList<Planet> expectedPlanets = new ArrayList<Planet>();
+		final Field planets = testGalaxy.getClass().getDeclaredField("planets");
+		planets.setAccessible(true);
+		
+		expectedPlanets.add(new Planet(1, 500000));
+		expectedPlanets.get(0).updatePosition(10);
+		
+    	testGalaxy.add(testPlanet);
+    	testGalaxy.updatePositions(10);
+    	
+    	assertEquals(expectedPlanets, planets.get(testGalaxy));
+	}
 }
