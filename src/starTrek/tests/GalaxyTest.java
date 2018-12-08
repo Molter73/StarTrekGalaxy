@@ -1,7 +1,7 @@
 /**
  * 
  */
-package starTrekTests;
+package starTrek.tests;
 
 import static org.junit.Assert.*;
 
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import starTrekGalaxy.Galaxy;
-import starTrekGalaxy.Planet;
+import starTrek.galaxy.Galaxy;
+import starTrek.galaxy.Planet;
 
 /**
  * @author Mauro Moltrasio
@@ -20,7 +20,7 @@ import starTrekGalaxy.Planet;
 public class GalaxyTest {
 
 	/**
-	 * Test method for {@link starTrekGalaxy.Galaxy#Galaxy()}.
+	 * Test method for {@link starTrek.galaxy.Galaxy#Galaxy()}.
 	 */
 	@Test
 	public void testGalaxy() {
@@ -29,7 +29,7 @@ public class GalaxyTest {
 
 	
 	/**
-	 * Test method for {@link starTrekGalaxy.Galaxy#Galaxy(java.util.ArrayList)}.
+	 * Test method for {@link starTrek.galaxy.Galaxy#Galaxy(java.util.ArrayList)}.
 	 * @throws SecurityException 
 	 * @throws NoSuchFieldException 
 	 * @throws IllegalAccessException 
@@ -51,7 +51,7 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrekGalaxy.Galaxy#getPlanets()}.
+	 * Test method for {@link starTrek.galaxy.Galaxy#getPlanets()}.
 	 * @throws SecurityException 
 	 * @throws NoSuchFieldException 
 	 * @throws IllegalAccessException 
@@ -74,7 +74,7 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrekGalaxy.Galaxy#add(starTrekGalaxy.Planet)}.
+	 * Test method for {@link starTrek.galaxy.Galaxy#add(starTrek.galaxy.Planet)}.
 	 * @throws SecurityException 
 	 * @throws NoSuchFieldException 
 	 * @throws IllegalAccessException 
@@ -95,7 +95,7 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrekGalaxy.Galaxy#add(java.lang.Integer, java.lang.Integer)}.
+	 * Test method for {@link starTrek.galaxy.Galaxy#add(java.lang.Integer, java.lang.Integer)}.
 	 * @throws SecurityException 
 	 * @throws NoSuchFieldException 
 	 * @throws IllegalAccessException 

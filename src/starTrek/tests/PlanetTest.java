@@ -1,7 +1,7 @@
 /**
  * 
  */
-package starTrekTests;
+package starTrek.tests;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
 
 import org.junit.Test;
 
-import starTrekGalaxy.Planet;
+import starTrek.galaxy.Planet;
 
 /**
  * @author moltrasm
@@ -18,7 +18,7 @@ import starTrekGalaxy.Planet;
 public class PlanetTest {
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet#Planet(java.lang.Integer, java.lang.Integer)}.
+     * Test method for {@link starTrek.galaxy.Planet#Planet(java.lang.Integer, java.lang.Integer)}.
      */
     @Test
     public void testPlanet() {
@@ -42,7 +42,7 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet#getxPos()}.
+     * Test method for {@link starTrek.galaxy.Planet#getxPos()}.
      */
     @Test
     public void testGetxPos() throws NoSuchFieldException, IllegalAccessException {
@@ -57,7 +57,7 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet#setxPos(java.lang.Integer)}.
+     * Test method for {@link starTrek.galaxy.Planet#setxPos(java.lang.Integer)}.
      */
     @Test
     public void testSetxPos() throws NoSuchFieldException, IllegalAccessException{
@@ -72,7 +72,7 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet#getyPos()}.
+     * Test method for {@link starTrek.galaxy.Planet#getyPos()}.
      */
     @Test
     public void testGetyPos() throws NoSuchFieldException, IllegalAccessException{
@@ -87,7 +87,7 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet#setyPos(java.lang.Integer)}.
+     * Test method for {@link starTrek.galaxy.Planet#setyPos(java.lang.Integer)}.
      */
     @Test
     public void testSetyPos() throws NoSuchFieldException, IllegalAccessException{
@@ -102,7 +102,7 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet#getSpeed()}.
+     * Test method for {@link starTrek.galaxy.Planet#getSpeed()}.
      */
     @Test
     public void testGetSpeed() throws NoSuchFieldException, IllegalAccessException{
@@ -118,7 +118,7 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet#getDistance()}.
+     * Test method for {@link starTrek.galaxy.Planet#getDistance()}.
      */
     @Test
     public void testGetDistance() throws NoSuchFieldException, IllegalAccessException{

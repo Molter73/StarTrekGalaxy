@@ -1,7 +1,7 @@
 /**
  * 
  */
-package starTrekGalaxy;
+package starTrek.galaxy;
 
 import java.util.ArrayList;
 
