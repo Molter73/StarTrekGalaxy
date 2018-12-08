@@ -113,18 +113,27 @@ public class Line {
 	}
 	/**
 	 * Checks whether a given point is inside this line
+	 * <p>
+	 * Checks whether a given point is inside this line.
+	 * Before doing the actual check and taking into account the
+	 * application for this class is in a planetary scale, where
+	 * the integer value is in the order of thousands of kilometers,
+	 * we will round position values to integers and drop the decimals. 
+	 * Because of this, the alignment of planets wont be perfect, 
+	 * but then again planets are big and our model just assumes they are dots 
+	 * so it will balance itself out.
 	 * @param xPos the position of the point along the x axis
 	 * @param yPos the position of the point along the y axis
 	 */
 	public boolean containsPoint(Double xPos, Double yPos) {
 		if (Double.isInfinite(this.slope)) {
-			if (this.intercept.equals(xPos)) {
+			if (this.intercept.intValue() == xPos.intValue()) {
 				return true;
 			}
 			return false;
 		} else {	// check to see if point is in this line
 			Double calcY = (xPos * this.slope) + this.intercept;
-			if(calcY.equals(yPos)) {
+			if(calcY.intValue() == yPos.intValue()) {
 				return true;
 			} 
 			return false;
