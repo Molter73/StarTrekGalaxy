@@ -11,7 +11,6 @@ import java.awt.Polygon;
 
 import starTrek.galaxy.Galaxy;
 import starTrek.galaxy.Planet;
-import starTrek.geometry.Line;
 
 /**
  * @author Mauro Moltrasio
@@ -27,9 +26,9 @@ public class Simulation {
 		 * We first create the three planets that will exist
 		 * in the galaxy
 		 */
-		Planet ferengi = new Planet(-1, 500d);
-		Planet betasoide = new Planet(-3, 2000d);
-		Planet vulcano = new Planet(5, 1000d);
+		Planet ferengi = new Planet("ferengi", -1, 500d);
+		Planet betasoide = new Planet("betasoide", -3, 2000d);
+		Planet vulcano = new Planet("vulcano", 5, 1000d);
 		
 		/**
 		 * Add the planets to a Galaxy
@@ -60,19 +59,12 @@ public class Simulation {
 		for(int day = 0; day < 3650; day++) {
 			galaxy.updatePositions(day);
 			
-			/**
-			 * Create a line from ferengi and betasoide planets
-			 * then find out if vulcano is in said line
-			 */
-			Line line = new Line(ferengi.getxPos(), ferengi.getyPos(),
-					betasoide.getxPos(), betasoide.getyPos());
-			
-			if(line.containsPoint(vulcano.getxPos(), vulcano.getyPos())) {
+			if (galaxy.planetsAligned()) {
 				/**
 				 * The planets are aligned!! Now we must check if they
-				 * are aligned with the sun which is our center (0,0)
+				 * are aligned with the sun 
 				 */
-				if(line.containsPoint(0d, 0d)) {
+				if(galaxy.planetsAlignedWithSun()) {
 					/**
 					 * The sun is in line with the planets,
 					 * this is a drought season

@@ -8,23 +8,30 @@ package starTrek.galaxy;
  *
  */
 public class Planet {
+	private String name;
 	private Integer speed;     	//  degrees / day
 	private Double distance;  	//  meters from the sun
 	
 	private Double xPos;		
     private Double yPos;
         
+	/**
+	 * @deprecated Use {@link #Planet(String,Integer,Double)} instead
+	 */
 	public Planet(Integer speed, Double distance) throws NullPointerException{
-        super();
+		this("", speed, distance);
+	}
+	public Planet(String name, Integer speed, Double distance) throws NullPointerException{
         //  speed and distance can only be set at Planet creation time and are required.
-        if(speed == null || distance == null)
+        if(speed == null || distance == null || name == null)
             throw new NullPointerException();
         
+        this.name = name;
         this.speed = speed;
         this.distance = distance;
         
         // for a matter of simplicity in calculations, all planets start at
-        // (xPos = distance, yPos = 0) making the initial angle 0° for all of them
+        // (xPos = distance, yPos = 0) making the initial angle 0ï¿½ for all of them
         this.xPos = distance;
         this.yPos = 0d;
     }
