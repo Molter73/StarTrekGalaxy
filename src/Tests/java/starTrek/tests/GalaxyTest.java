@@ -116,7 +116,7 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrekGalaxy.update}
+	 * Test method for {@link starTrek.Galaxy#updatePositions}
 	 * @throws SecurityException 
 	 * @throws NoSuchFieldException 
 	 * @throws IllegalAccessException 
@@ -137,5 +137,71 @@ public class GalaxyTest {
     	testGalaxy.updatePositions(10);
     	
     	assertEquals(expectedPlanets, planets.get(testGalaxy));
+	}
+
+	/**
+	 * Test method for {@link starTrek.Galaxy#planetsAligned}
+	 */
+	@Test
+	public void testPlanetsAligned() {
+		final Galaxy emptyGalaxy = new Galaxy();
+		final Galaxy singlePlanetGalaxy = new Galaxy();
+		final Galaxy doublePlanetGalaxy = new Galaxy();
+		final Galaxy triplePlanetGalaxy = new Galaxy();
+		final Galaxy tripleUnalignedGalaxy = new Galaxy();
+		final Planet unalignedPlanet = new Planet("", 1, 100d);
+		
+		unalignedPlanet.setyPos(200d);
+		
+		singlePlanetGalaxy.add(new Planet("", 1, 100d));
+		doublePlanetGalaxy.add(new Planet("", 1, 100d));
+		doublePlanetGalaxy.add(new Planet("", 1, 200d));
+		triplePlanetGalaxy.add(new Planet("", 1, 100d));
+		triplePlanetGalaxy.add(new Planet("", 1, 200d));
+		triplePlanetGalaxy.add(new Planet("", 1, 300d));
+		tripleUnalignedGalaxy.add(new Planet("", 1, 100d));
+		tripleUnalignedGalaxy.add(new Planet("", 1, 200d));
+		tripleUnalignedGalaxy.add(unalignedPlanet);
+		
+		assertFalse(emptyGalaxy.planetsAligned());
+		assertFalse(singlePlanetGalaxy.planetsAligned());
+		assertTrue(doublePlanetGalaxy.planetsAligned());
+		assertTrue(triplePlanetGalaxy.planetsAligned());
+		assertFalse(tripleUnalignedGalaxy.planetsAligned());
+	}
+	
+	/**
+	 * Test method for {@link starTrek.Galaxy#planetsAlignedWithSun}
+	 */
+	@Test
+	public void testPlanetsAlignedWithSun() {
+		final Galaxy emptyGalaxy = new Galaxy();
+		final Galaxy singlePlanetGalaxy = new Galaxy();
+		final Galaxy doublePlanetGalaxy = new Galaxy();
+		final Galaxy triplePlanetGalaxy = new Galaxy();
+		final Galaxy tripleUnalignedGalaxy = new Galaxy();
+		final Galaxy notAlignedWithSun = new Galaxy();
+		final Planet unalignedPlanet = new Planet("", 1, 100d);
+		
+		unalignedPlanet.setyPos(200d);
+		
+		singlePlanetGalaxy.add(new Planet("", 1, 100d));
+		doublePlanetGalaxy.add(new Planet("", 1, 100d));
+		doublePlanetGalaxy.add(new Planet("", 1, 200d));
+		triplePlanetGalaxy.add(new Planet("", 1, 100d));
+		triplePlanetGalaxy.add(new Planet("", 1, 200d));
+		triplePlanetGalaxy.add(new Planet("", 1, 300d));
+		tripleUnalignedGalaxy.add(new Planet("", 1, 100d));
+		tripleUnalignedGalaxy.add(new Planet("", 1, 200d));
+		tripleUnalignedGalaxy.add(unalignedPlanet);
+		notAlignedWithSun.add(new Planet("", 1, 100d));
+		notAlignedWithSun.add(unalignedPlanet);
+		
+		assertFalse(emptyGalaxy.planetsAlignedWithSun());
+		assertFalse(singlePlanetGalaxy.planetsAlignedWithSun());
+		assertTrue(doublePlanetGalaxy.planetsAlignedWithSun());
+		assertTrue(triplePlanetGalaxy.planetsAlignedWithSun());
+		assertFalse(tripleUnalignedGalaxy.planetsAlignedWithSun());
+		assertFalse(notAlignedWithSun.planetsAlignedWithSun());
 	}
 }

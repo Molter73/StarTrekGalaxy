@@ -46,6 +46,8 @@ public class Planet {
      */
     public void setxPos(Double xPos) {
         this.xPos = xPos;
+        // calculate the new distance
+        this.distance = Math.hypot(Math.abs(this.xPos), this.yPos);
     }
     /**
      * @return the yPos
@@ -58,6 +60,8 @@ public class Planet {
      */
     public void setyPos(Double yPos) {
         this.yPos = yPos;
+        // calculate the new distance
+        this.distance = Math.hypot(Math.abs(this.xPos), this.yPos);
     }
     /**
      * @return the speed

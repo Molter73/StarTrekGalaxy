@@ -3,6 +3,7 @@
  */
 package starTrek.galaxy;
 
+import java.awt.Polygon;
 import java.util.ArrayList;
 
 import starTrek.geometry.Line;
@@ -116,5 +117,59 @@ public class Galaxy {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Determine the weather of planets based on their
+	 * current position
+	 * @return a String description of the weather
+	 */
+	public String getWeather() {
+		if (this.planetsAligned()) {
+			if (this.planetsAlignedWithSun()) {
+				return new String("drought");
+			} else {
+				return new String ("optimum");
+			}
+		} else { 
+			/**
+			 * The planets are not aligned, we create a polygon
+			 * with them and check to see if the sun (0,0) is 
+			 * inside of it
+			 */
+			Polygon polygon = new Polygon();
+			for(Planet planet : this.planets)
+				polygon.addPoint(planet.getxPos().intValue(), planet.getyPos().intValue());
+			
+			if(polygon.contains(0, 0))
+				return new String("sunny");
+		}
+		return new String("rain");
+	}
+
+	/**
+	 * Determine the perimeter of the polygon created
+	 * by the planets in this galaxy
+	 * If the galaxy has 2 or less planets, the perimeter
+	 * defaults to 0
+	 * The calculated value wont be perfect cause we round
+	 * the planets positions to ints, but it should be close
+	 * enough in a planetary scale
+	 * @return a Double with the total perimeter
+	 */
+	public Double getPerimeter() {
+		Planet prevPlanet = this.planets.get(this.planets.size() - 1);
+		Double result = 0d;
+		
+		if(this.planets.size() <= 2)
+			return 0d;
+		
+		for (Planet planet : planets) {
+			result += Math.hypot(Math.abs(planet.getxPos() - prevPlanet.getxPos()), 
+					Math.abs(planet.getyPos() - prevPlanet.getyPos()));
+			prevPlanet = planet;
+		}
+		
+		return result;
 	}
 }
