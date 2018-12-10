@@ -27,3 +27,6 @@ hs_err_pid*
 # ignore Eclipse specific files
 .project
 .classpath
+\.settings/
+
+*.properties
