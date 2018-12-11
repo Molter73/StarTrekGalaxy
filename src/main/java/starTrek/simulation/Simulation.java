@@ -8,6 +8,7 @@
 package starTrek.simulation;
 
 import starTrek.galaxy.Galaxy;
+import starTrek.galaxy.NotEnoughPlanetsException;
 import starTrek.galaxy.Planet;
 
 /**
@@ -18,8 +19,9 @@ public class Simulation {
 
 	/**
 	 * @param args
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NotEnoughPlanetsException {
 		/**
 		 * Add the planets to a Galaxy
 		 */
@@ -56,7 +58,7 @@ public class Simulation {
 			case "optimum":
 				optimumConditionsOccured++;
 				break;
-			case "rain":
+			case "rainy":
 				rainSeasons++;
 				Double perimeter = galaxy.getPerimeter();
 				if (perimeter > maxPerimeter) {

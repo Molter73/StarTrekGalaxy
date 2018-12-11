@@ -123,8 +123,11 @@ public class Galaxy {
 	 * Determine the weather of planets based on their
 	 * current position
 	 * @return a String description of the weather
+	 * @throws NotEnoughPlanetsException 
 	 */
-	public String getWeather() {
+	public String getWeather() throws NotEnoughPlanetsException {
+		if (this.planets.size() < 2)
+			throw new NotEnoughPlanetsException();
 		if (this.planetsAligned()) {
 			if (this.planetsAlignedWithSun()) {
 				return new String("drought");
@@ -144,7 +147,7 @@ public class Galaxy {
 			if(polygon.contains(0, 0))
 				return new String("sunny");
 		}
-		return new String("rain");
+		return new String("rainy");
 	}
 
 	/**
@@ -158,12 +161,12 @@ public class Galaxy {
 	 * @return a Double with the total perimeter
 	 */
 	public Double getPerimeter() {
-		Planet prevPlanet = this.planets.get(this.planets.size() - 1);
 		Double result = 0d;
 		
 		if(this.planets.size() <= 2)
 			return 0d;
-		
+
+		Planet prevPlanet = this.planets.get(this.planets.size() - 1);
 		for (Planet planet : planets) {
 			result += Math.hypot(Math.abs(planet.getxPos() - prevPlanet.getxPos()), 
 					Math.abs(planet.getyPos() - prevPlanet.getyPos()));

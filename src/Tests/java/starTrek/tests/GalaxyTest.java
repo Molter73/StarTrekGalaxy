@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import starTrek.galaxy.Galaxy;
+import starTrek.galaxy.NotEnoughPlanetsException;
 import starTrek.galaxy.Planet;
 
 /**
@@ -204,4 +205,84 @@ public class GalaxyTest {
 		assertFalse(tripleUnalignedGalaxy.planetsAlignedWithSun());
 		assertFalse(notAlignedWithSun.planetsAlignedWithSun());
 	}
+
+	/**
+	 * Test method for {@link starTrek.Galaxy#getWeather}
+	 * @throws NotEnoughPlanetsException 
+	 */
+	@Test
+	public void testGetWeather() throws NotEnoughPlanetsException {
+		final Galaxy emptyGalaxy = new Galaxy();
+		final Galaxy droughtGalaxy = new Galaxy();
+		final Galaxy optimumGalaxy = new Galaxy();
+		final Galaxy rainyGalaxy = new Galaxy();
+		final Galaxy sunnyGalaxy = new Galaxy();
+		final Planet firstPlanet = new Planet("", 1, 100d);
+		final Planet secondPlanet = new Planet("", 1, 100d);
+		final Planet thirdPlanet = new Planet("", 1, 100d);
+		NotEnoughPlanetsException galaxyEmptyException = null;
+		String droughtText;
+		String optimumText;
+		String rainyText;
+		String sunnyText;
+		
+		firstPlanet.setyPos(100d);		// (100, 100)
+		secondPlanet.setyPos(-100d);	// (100, -100)
+		thirdPlanet.setxPos(-100d);		// (-100, 0)
+		
+		droughtGalaxy.add(new Planet("", 1, 100d));
+		droughtGalaxy.add(new Planet("", 1, 200d));
+		optimumGalaxy.add(new Planet("", 1, 100d));
+		optimumGalaxy.add(firstPlanet);
+		rainyGalaxy.add(new Planet("", 1, 100d));
+		rainyGalaxy.add(new Planet("", 1, 200d));
+		rainyGalaxy.add(firstPlanet);
+		sunnyGalaxy.add(firstPlanet);
+		sunnyGalaxy.add(secondPlanet);
+		sunnyGalaxy.add(thirdPlanet);
+		
+		try {
+			emptyGalaxy.getWeather();
+		} catch (NotEnoughPlanetsException e) {
+			galaxyEmptyException = e;
+		}
+
+		droughtText = droughtGalaxy.getWeather();
+		optimumText = optimumGalaxy.getWeather();
+		rainyText = rainyGalaxy.getWeather();
+		sunnyText = sunnyGalaxy.getWeather();
+		
+		assertNotNull(galaxyEmptyException);
+		assertEquals("drought", droughtText);
+		assertEquals("optimum", optimumText);
+		assertEquals("rainy", rainyText);
+		assertEquals("sunny", sunnyText);
+	}
+
+	/**
+	 * Test method for {@link starTrek.Galaxy#getPerimeter}
+	 */
+	@Test
+	public void testGetPerimeter()  {
+		final Galaxy emptyGalaxy = new Galaxy();
+		final Galaxy testGalaxy = new Galaxy();
+		final Planet firstPlanet = new Planet("", 1, 100d);
+		final Planet secondPlanet = new Planet("", 1, 100d);
+		final Planet thirdPlanet = new Planet("", 1, 100d);
+		Double perimeter;
+		
+		firstPlanet.setyPos(100d);		// (100, 100)
+		secondPlanet.setyPos(-100d);	// (100, -100)
+		thirdPlanet.setxPos(-100d);		// (-100, 0)
+		
+		testGalaxy.add(firstPlanet);
+		testGalaxy.add(secondPlanet);
+		testGalaxy.add(thirdPlanet);
+
+		perimeter = testGalaxy.getPerimeter();
+		
+		assertEquals(0d, emptyGalaxy.getPerimeter(), 0.001);
+		assertEquals(647.213, perimeter, 0.001);
+	}
+
 }
