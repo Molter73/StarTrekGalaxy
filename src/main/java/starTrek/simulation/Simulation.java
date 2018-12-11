@@ -23,7 +23,7 @@ public class Simulation {
 	 */
 	public static void main(String[] args) throws NotEnoughPlanetsException {
 		/**
-		 * Add the planets to a Galaxy
+		 * Add planets to a Galaxy
 		 */
 		Galaxy galaxy = new Galaxy();
 		
