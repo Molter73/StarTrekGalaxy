@@ -31,6 +31,7 @@ public class Application {
 	@Bean
 	public CommandLineRunner runner(WeatherRepository repository) {
 		return (args) -> {
+			log.info("Adding planets to a new galaxy...");
 			/**
 			 * Add planets to a Galaxy
 			 */
@@ -45,6 +46,7 @@ public class Application {
 			 * 10 Earth years and save the results to a
 			 * database
 			 */
+			log.info("Simulating weather and saving to DB...");
 			for(int day = 0; day < 3650; day++) {
 				galaxy.updatePositions(day);
 				
