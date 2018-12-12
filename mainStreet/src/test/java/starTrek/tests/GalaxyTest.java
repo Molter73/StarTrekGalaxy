@@ -132,10 +132,10 @@ public class GalaxyTest {
 		planets.setAccessible(true);
 		
 		expectedPlanets.add(new Planet("", 1, 500000d));
-		expectedPlanets.get(0).updatePosition(10);
+		expectedPlanets.get(0).updatePosition(10l);
 		
     	testGalaxy.add(testPlanet);
-    	testGalaxy.updatePositions(10);
+    	testGalaxy.updatePositions(10l);
     	
     	assertEquals(expectedPlanets, planets.get(testGalaxy));
 	}

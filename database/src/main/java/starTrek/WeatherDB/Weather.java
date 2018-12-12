@@ -12,9 +12,9 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="Weather", schema="StarTrekWeather")
+@Table(name="Weather", schema="star_trek_weather")
 public class Weather {
-	@Id int day;
+	@Id Long day;
 	String weatherCondition;
 	
 	protected Weather() {}
@@ -23,7 +23,7 @@ public class Weather {
 	 * @param day
 	 * @param weatherCondition
 	 */
-	public Weather(int day, String weatherCondition) {
+	public Weather(Long day, String weatherCondition) {
 		this.day = day;
 		this.weatherCondition = weatherCondition;
 	}

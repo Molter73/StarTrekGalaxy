@@ -39,7 +39,7 @@ public class Simulation {
 		Integer optimumConditionsOccured = 0;
 		Integer droughtConditionsOccured = 0;
 		Integer rainSeasons = 0;
-		Integer biggestRainDay = 0;
+		Long biggestRainDay = 0l;
 		Double  maxPerimeter = 0d;
 		
 		/**
@@ -48,7 +48,7 @@ public class Simulation {
 		 * to determine what the weather will be and record
 		 * useful information
 		 */
-		for(int day = 0; day < 3650; day++) {
+		for(Long day = 0l; day < 3650; day++) {
 			galaxy.updatePositions(day);
 			
 			switch (galaxy.getWeather()) {
