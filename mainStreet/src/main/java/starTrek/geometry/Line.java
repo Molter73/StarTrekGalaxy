@@ -1,10 +1,9 @@
+
+package starTrek.geometry;
 /**
  * A simple class, meant to hold the necessary values 
  * to define a straight line in a 2 dimensional space
- */
-package starTrek.geometry;
-
-/**
+ *
  * @author Mauro Moltrasio
  *
  */
@@ -22,8 +21,10 @@ public class Line {
 		intercept = (double) 0;
 	}
 	/**
-	 * @param gradient
-	 * @param intercept
+	 * Sets the lines parameters from the given arguments.
+	 * 
+	 * @param gradient the slope of this line
+	 * @param intercept the value of y at which this line crosses the vertical axis
 	 */
 	public Line(Double gradient, Double intercept) {
 		super();
@@ -32,7 +33,7 @@ public class Line {
 	}
 	/**
 	 * Calculates and sets the gradient and intercept of this line
-	 * based on two dots in the plain
+	 * based on two dots in the plain.
 	 * @param x1 the first dot's x position
 	 * @param y1 the first dot's y position
 	 * @param x2 the second dot's x position
@@ -53,24 +54,28 @@ public class Line {
 			this.intercept = y1 - (x1 * this.slope);
 	}
 	/**
-	 * @return the gradient
+	 * Get this lines slope
+	 * @return the slope
 	 */
 	public Double getSlope() {
 		return slope;
 	}
 	/**
-	 * @param gradient the gradient to set
+	 * Sets a new slope for this line
+	 * @param slope the slope to be set
 	 */
-	public void setSlope(Double gradient) {
-		this.slope = gradient;
+	public void setSlope(Double slope) {
+		this.slope = slope;
 	}
 	/**
+	 * Get the point at which this line crosses the y axis
 	 * @return the intercept
 	 */
 	public Double getIntercept() {
 		return intercept;
 	}
 	/**
+	 * Sets the point at which this line crosses the y axis
 	 * @param intercept the intercept to set
 	 */
 	public void setIntercept(Double intercept) {
@@ -114,16 +119,16 @@ public class Line {
 	/**
 	 * Checks whether a given point is inside this line
 	 * <p>
-	 * Checks whether a given point is inside this line.
 	 * Before doing the actual check and taking into account the
 	 * application for this class is in a planetary scale, where
 	 * the integer value is in the order of thousands of kilometers,
 	 * we will round position values to integers and drop the decimals. 
 	 * Because of this, the alignment of planets wont be perfect, 
-	 * but then again planets are big and our model just assumes they are dots 
+	 * but then again, planets are big and our model just assumes they are dots 
 	 * so it will balance itself out.
 	 * @param xPos the position of the point along the x axis
 	 * @param yPos the position of the point along the y axis
+	 * @return true if the point is within the line
 	 */
 	public boolean containsPoint(Double xPos, Double yPos) {
 		if (Double.isInfinite(this.slope)) {

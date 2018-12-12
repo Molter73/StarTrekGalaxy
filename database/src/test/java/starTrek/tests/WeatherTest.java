@@ -14,6 +14,8 @@ import org.junit.Test;
 import starTrek.WeatherDB.Weather;
 
 /**
+ * Tests for the Weather class
+ * 
  * @author Molter
  *
  */
@@ -21,10 +23,13 @@ public class WeatherTest {
 
 	/**
 	 * Test method for {@link starTrek.WeatherDB.Weather#Weather(starTrek.WeatherDB.Weather)}.
-	 * @throws NoSuchFieldException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
-	public void testWeatherWeather() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchFieldException  {
+	public void testWeatherWeather() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException   {
 		final Weather original = new Weather(1L, "test");
 		final Weather weather = new Weather(original);
 		final Field day = weather.getClass().getDeclaredField("day");
@@ -39,10 +44,10 @@ public class WeatherTest {
 	
 	/**
 	 * Test method for {@link starTrek.WeatherDB.Weather#Weather(java.lang.Long, java.lang.String)}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testWeatherLongString() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {

@@ -4,6 +4,10 @@
 package starTrek.galaxy;
 
 /**
+ * A class representing a Planet with its speed and position
+ * 
+ * Contains methods for creating and manipulating planets.
+ * 
  * @author Mauro Moltrasio
  *
  */
@@ -16,11 +20,23 @@ public class Planet {
     private Double yPos;
         
 	/**
+	 * 
+	 * @param speed the speed at which the planet rotates around the sun
+	 * @param distance the distance of the planet from the sun
+	 * @throws NullPointerException throws NullPointerException if any of the parameters is null
 	 * @deprecated Use {@link #Planet(String,Integer,Double)} instead
 	 */
 	public Planet(Integer speed, Double distance) throws NullPointerException{
 		this("", speed, distance);
 	}
+	/**
+	 * Creates a new planet with the given parameters
+	 * 
+	 * @param name a String containing the planets name
+	 * @param speed the speed at which the planet rotates around the sun
+	 * @param distance the distance of the planet from the sun
+	 * @throws NullPointerException throws NullPointerException if any of the parameters is null
+	 */
 	public Planet(String name, Integer speed, Double distance) throws NullPointerException{
         //  speed and distance can only be set at Planet creation time and are required.
         if(speed == null || distance == null || name == null)
@@ -36,12 +52,17 @@ public class Planet {
         this.yPos = 0d;
     }
     /**
+     * Get the planets x position
+     * 
      * @return the xPos
      */
     public Double getxPos() {
         return xPos;
     }
     /**
+     * The new planets x position
+     * Calculates the new distance from the sun
+     * 
      * @param xPos the xPos to set
      */
     public void setxPos(Double xPos) {
@@ -50,12 +71,17 @@ public class Planet {
         this.distance = Math.hypot(Math.abs(this.xPos), this.yPos);
     }
     /**
+     * Get the planets y position
+     * 
      * @return the yPos
      */
     public Double getyPos() {
         return yPos;
     }
     /**
+     * The new planets x position
+     * Calculates the new distance from the sun
+     * 
      * @param yPos the yPos to set
      */
     public void setyPos(Double yPos) {
@@ -64,12 +90,15 @@ public class Planet {
         this.distance = Math.hypot(Math.abs(this.xPos), this.yPos);
     }
     /**
+     * Get the planets rotation speed.
+     * 
      * @return the speed
      */
     public Integer getSpeed() {
         return speed;
     }
     /**
+     * Get the planets distance from the sun.
      * @return the distance
      */
     public Double getDistance() {
@@ -125,6 +154,8 @@ public class Planet {
 	/**
 	 * Update the position of the planet for a given amount of days
 	 * elapsed from its creation
+	 * 
+	 * @param elapsedDays the amount of this passed since the creation of the galaxy
 	 */
 	public void updatePosition(Long elapsedDays) {
 		double traveledDegrees = this.getSpeed() * elapsedDays;

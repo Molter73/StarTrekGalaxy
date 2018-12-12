@@ -15,6 +15,7 @@ import starTrek.galaxy.NotEnoughPlanetsException;
 import starTrek.galaxy.Planet;
 
 /**
+ * Tests for the Galaxy class
  * @author Mauro Moltrasio
  *
  */
@@ -31,10 +32,10 @@ public class GalaxyTest {
 	
 	/**
 	 * Test method for {@link starTrek.galaxy.Galaxy#Galaxy(java.util.ArrayList)}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testGalaxyArray() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -53,10 +54,10 @@ public class GalaxyTest {
 
 	/**
 	 * Test method for {@link starTrek.galaxy.Galaxy#getPlanets()}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testGetPlanets() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -76,10 +77,10 @@ public class GalaxyTest {
 
 	/**
 	 * Test method for {@link starTrek.galaxy.Galaxy#add(starTrek.galaxy.Planet)}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testAddPlanet() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -96,11 +97,11 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrek.galaxy.Galaxy#add(java.lang.Integer, java.lang.Integer)}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * Test method for {@link starTrek.galaxy.Galaxy#add(java.lang.Integer, java.lang.Double)}.
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testAddIntegerInteger() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -117,11 +118,11 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrek.Galaxy#updatePositions}
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * Test method for {@link starTrek.galaxy.Galaxy#updatePositions(Long)}
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testUpdatePositions() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -141,7 +142,7 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrek.Galaxy#planetsAligned}
+	 * Test method for {@link starTrek.galaxy.Galaxy#planetsAligned}
 	 */
 	@Test
 	public void testPlanetsAligned() {
@@ -172,7 +173,7 @@ public class GalaxyTest {
 	}
 	
 	/**
-	 * Test method for {@link starTrek.Galaxy#planetsAlignedWithSun}
+	 * Test method for {@link starTrek.galaxy.Galaxy#planetsAlignedWithSun}
 	 */
 	@Test
 	public void testPlanetsAlignedWithSun() {
@@ -207,8 +208,8 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrek.Galaxy#getWeather}
-	 * @throws NotEnoughPlanetsException 
+	 * Test method for {@link starTrek.galaxy.Galaxy#getWeather}
+	 * @throws NotEnoughPlanetsException exception thrown when trying to do math with not enough planets in the galaxy
 	 */
 	@Test
 	public void testGetWeather() throws NotEnoughPlanetsException {
@@ -260,7 +261,7 @@ public class GalaxyTest {
 	}
 
 	/**
-	 * Test method for {@link starTrek.Galaxy#getPerimeter}
+	 * Test method for {@link starTrek.galaxy.Galaxy#getPerimeter}
 	 */
 	@Test
 	public void testGetPerimeter()  {

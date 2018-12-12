@@ -12,13 +12,14 @@ import org.junit.Test;
 import starTrek.galaxy.Planet;
 
 /**
- * @author moltrasm
+ * Tests for the Planet class
+ * @author Mauro Moltrasio
  *
  */
 public class PlanetTest {
 
     /**
-     * Test method for {@link starTrek.galaxy.Planet#Planet(String, java.lang.Integer, java.lang.Integer)}.
+     * Test method for {@link starTrek.galaxy.Planet#Planet(String, Integer, Double)}.
      */
     @Test
     public void testPlanet() {
@@ -43,6 +44,10 @@ public class PlanetTest {
 
     /**
      * Test method for {@link starTrek.galaxy.Planet#getxPos()}.
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
      */
     @Test
     public void testGetxPos() throws NoSuchFieldException, IllegalAccessException {
@@ -57,7 +62,11 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrek.galaxy.Planet#setxPos(java.lang.Integer)}.
+     * Test method for {@link starTrek.galaxy.Planet#setxPos(java.lang.Double)}.
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
      */
     @Test
     public void testSetxPos() throws NoSuchFieldException, IllegalAccessException{
@@ -73,6 +82,10 @@ public class PlanetTest {
 
     /**
      * Test method for {@link starTrek.galaxy.Planet#getyPos()}.
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
      */
     @Test
     public void testGetyPos() throws NoSuchFieldException, IllegalAccessException{
@@ -87,7 +100,11 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrek.galaxy.Planet#setyPos(java.lang.Integer)}.
+     * Test method for {@link starTrek.galaxy.Planet#setyPos(java.lang.Double)}.
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
      */
     @Test
     public void testSetyPos() throws NoSuchFieldException, IllegalAccessException{
@@ -103,6 +120,10 @@ public class PlanetTest {
 
     /**
      * Test method for {@link starTrek.galaxy.Planet#getSpeed()}.
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
      */
     @Test
     public void testGetSpeed() throws NoSuchFieldException, IllegalAccessException{
@@ -119,6 +140,10 @@ public class PlanetTest {
 
     /**
      * Test method for {@link starTrek.galaxy.Planet#getDistance()}.
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
      */
     @Test
     public void testGetDistance() throws NoSuchFieldException, IllegalAccessException{
@@ -134,7 +159,7 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet.equals()}
+     * Test method for {@link starTrek.galaxy.Planet#equals(Object)}
      */
     @Test
     public void testEquals() {
@@ -150,11 +175,11 @@ public class PlanetTest {
     }
 
     /**
-     * Test method for {@link starTrekGalaxy.Planet.updatePosition(java.lang.Integer)}
-     * @throws SecurityException 
-     * @throws NoSuchFieldException 
-     * @throws IllegalAccessException 
-     * @throws IllegalArgumentException 
+     * Test method for {@link starTrek.galaxy.Planet#updatePosition(Long)}
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
      */
     @Test
     public void testUpdatePosition() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {

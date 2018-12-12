@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package starTrek.galaxy;
 
 import java.awt.Polygon;
@@ -9,6 +7,14 @@ import java.util.ArrayList;
 import starTrek.geometry.Line;
 
 /**
+ * This class handles all interactions between
+ * planets inside of a galaxy.
+ * <p>
+ * It has methods for updating position of planets
+ * based on its speed and getting the weather on
+ * them according to their relative positions.
+ * </p>
+ *
  * @author Mauro Moltrasio
  *
  */
@@ -16,7 +22,7 @@ public class Galaxy {
 	private ArrayList<Planet> planets;
 
 	/**
-	 * 
+	 * Create a new, empty galaxy.
 	 */
 	public Galaxy() {
 		super();
@@ -24,7 +30,8 @@ public class Galaxy {
 	}
 	
 	/**
-	 * @param planets
+	 * Create a new galaxy with the planets specified.
+	 * @param planets the planets to be added to the new
 	 */
 	public Galaxy(ArrayList<Planet> planets) {
 		super();
@@ -39,7 +46,7 @@ public class Galaxy {
 	}
 
 	/**
-	 * Add a new planet to the galaxy
+	 * Add an existing planet to the galaxy.
 	 * @param planet the planet to add
 	 */
 	public void add(Planet planet) {
@@ -47,7 +54,7 @@ public class Galaxy {
 	}
 	
 	/**
-	 * Add a new planet to the galaxy
+	 * Add a new planet to the galaxy.
 	 * @param speed 	the speed at which the planet rotates
 	 * @param distance 	the distance from the sun to this planet
 	 */
@@ -56,7 +63,7 @@ public class Galaxy {
 	}
 	
 	/**
-	 * Update the position of planets for a given day
+	 * Update the position of planets for a given day.
 	 * @param elapsedDays the amounts of days elapsed
 	 */
 	public void updatePositions(Long elapsedDays) {
@@ -67,7 +74,7 @@ public class Galaxy {
 
 	/**
 	 * Determine whether the existing planets in this 
-	 * galaxy are aligned among themselves
+	 * galaxy are aligned among themselves.
 	 * @return true if planets are aligned
 	 */
 	public Boolean planetsAligned() {
@@ -79,7 +86,7 @@ public class Galaxy {
 			return true;
 		}
 		
-		/**
+		/*
 		 * Create a line from the first two planets in the galaxy
 		 * and check if all other planets are in said line
 		 */
@@ -99,12 +106,12 @@ public class Galaxy {
 
 	/**
 	 * Determine whether the planets in this galaxy are
-	 * aligned among themselves and with the sun
+	 * aligned among themselves and with the sun.
 	 * @return true if all planets and the sun are aligned
 	 */
 	public Boolean planetsAlignedWithSun() {
 		if(this.planetsAligned()) {
-			/**
+			/*
 			 * Create a line from the first two planets in the galaxy
 			 * and check if the sun is in said line
 			 */
@@ -121,9 +128,9 @@ public class Galaxy {
 
 	/**
 	 * Determine the weather of planets based on their
-	 * current position
+	 * current position.
 	 * @return a String description of the weather
-	 * @throws NotEnoughPlanetsException 
+	 * @throws NotEnoughPlanetsException exception thrown when there are not enough planets in the galaxy
 	 */
 	public String getWeather() throws NotEnoughPlanetsException {
 		if (this.planets.size() < 2)
@@ -135,7 +142,7 @@ public class Galaxy {
 				return new String ("optimum");
 			}
 		} else { 
-			/**
+			/*
 			 * The planets are not aligned, we create a polygon
 			 * with them and check to see if the sun (0,0) is 
 			 * inside of it
@@ -152,12 +159,9 @@ public class Galaxy {
 
 	/**
 	 * Determine the perimeter of the polygon created
-	 * by the planets in this galaxy
+	 * by the planets in this galaxy.
 	 * If the galaxy has 2 or less planets, the perimeter
-	 * defaults to 0
-	 * The calculated value wont be perfect cause we round
-	 * the planets positions to ints, but it should be close
-	 * enough in a planetary scale
+	 * defaults to 0.
 	 * @return a Double with the total perimeter
 	 */
 	public Double getPerimeter() {

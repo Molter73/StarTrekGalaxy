@@ -14,6 +14,9 @@ import starTrek.galaxy.Galaxy;
 import starTrek.galaxy.Planet;
 
 /**
+ * This class runs a simulation on the star trek galaxy and
+ * writes the weather results to a database.
+ * 
  * @author Mauro Moltrasio
  *
  */
@@ -22,7 +25,8 @@ public class DataCreator {
 	private static final Logger log = LoggerFactory.getLogger(DataCreator.class);
 	
 	/**
-	 * @param args
+	 * The main execution method for the database creation.
+	 * @param args the execution parameters for this instance
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(DataCreator.class);

@@ -1,10 +1,4 @@
-/**
- * This class is responsible for running the simulation on 
- * the galaxy, to determine the weather conditions in different
- * days along the first 10 (Earth) years from the creation of the
- * galaxy (or the next 10 years after the next alignment of the three
- * major planets with the sun really, its just a matter of reference)
- */
+
 package starTrek.simulation;
 
 import starTrek.galaxy.Galaxy;
@@ -12,14 +6,24 @@ import starTrek.galaxy.NotEnoughPlanetsException;
 import starTrek.galaxy.Planet;
 
 /**
+ * This class is responsible for running the simulation on 
+ * the galaxy.
+ * 
+ * To determine the weather conditions in different
+ * days along the first 10 (Earth) years from the creation of the
+ * galaxy (or the next 10 years after the next alignment of the three
+ * major planets with the sun really, its just a matter of reference)
+ *
  * @author Mauro Moltrasio
  *
  */
 public class Simulation {
 
 	/**
-	 * @param args
-	 * @throws Exception 
+	 * The main execution method for the star trek weather simulation
+	 * 
+	 * @param args the execution parameters
+	 * @throws NotEnoughPlanetsException throws NotEnoughPlanetsException when there are no enough planets to predict the weather in this galaxy 
 	 */
 	public static void main(String[] args) throws NotEnoughPlanetsException {
 		/**
@@ -31,10 +35,9 @@ public class Simulation {
 		galaxy.add(new Planet("betasoide", -3, 2000d));
 		galaxy.add(new Planet("vulcano", 5, 1000d));
 		
-		/**
+		/*
 		 * We create some auxiliary variables to save 
 		 * some system information.
-		 * TODO: Move this auxiliary variables to a database.
 		 */
 		Integer optimumConditionsOccured = 0;
 		Integer droughtConditionsOccured = 0;
@@ -42,7 +45,7 @@ public class Simulation {
 		Long biggestRainDay = 0l;
 		Double  maxPerimeter = 0d;
 		
-		/**
+		/*
 		 * The system is set, we now sweep day by day
 		 * through the next 10 years, check conditions
 		 * to determine what the weather will be and record
@@ -71,10 +74,9 @@ public class Simulation {
 				break;
 			}
 		}
-		/**
+		/*
 		 * We have predicted the weather for the next ten years,
 		 * print results to console.
-		 * TODO: Create a REST interface and associated database
 		 */
 		System.out.println("Weather results for the next ten years!!");
 		System.out.println("Optimum conditions: " + optimumConditionsOccured);
@@ -82,5 +84,4 @@ public class Simulation {
 		System.out.println("Rain Seasons: " + rainSeasons);
 		System.out.println("Biggest rain day: " + biggestRainDay);
 	}
-
 }
