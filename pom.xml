@@ -14,5 +14,6 @@
 	<modules>
 		<module>mainstreet</module>
 		<module>database</module>
+		<module>rest-api</module>
 	</modules>
 </project>
