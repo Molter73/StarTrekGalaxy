@@ -165,7 +165,7 @@ public class PlanetTest {
     	xPos.setAccessible(true);
     	yPos.setAccessible(true);
     	
-    	testPlanet.updatePosition(10);
+    	testPlanet.updatePosition(10l);
     	
     	final Double xResult = 500000d * Math.cos(Math.toRadians(10));
     	final Double yResult = 500000d * Math.sin(Math.toRadians(10));

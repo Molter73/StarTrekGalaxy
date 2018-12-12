@@ -18,14 +18,14 @@ import starTrek.galaxy.Planet;
  *
  */
 @SpringBootApplication
-public class Application {
-	private static final Logger log = LoggerFactory.getLogger(Application.class);
+public class DataCreator {
+	private static final Logger log = LoggerFactory.getLogger(DataCreator.class);
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class);
+		SpringApplication.run(DataCreator.class);
 	}
 	
 	@Bean
@@ -47,7 +47,7 @@ public class Application {
 			 * database
 			 */
 			log.info("Simulating weather and saving to DB...");
-			for(int day = 0; day < 3650; day++) {
+			for(Long day = 0l; day < 3650; day++) {
 				galaxy.updatePositions(day);
 				
 				repository.save(new Weather(day, galaxy.getWeather()));

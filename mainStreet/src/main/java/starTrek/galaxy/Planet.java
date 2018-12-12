@@ -126,7 +126,7 @@ public class Planet {
 	 * Update the position of the planet for a given amount of days
 	 * elapsed from its creation
 	 */
-	public void updatePosition(Integer elapsedDays) {
+	public void updatePosition(Long elapsedDays) {
 		double traveledDegrees = this.getSpeed() * elapsedDays;
 
 		// calculate the position of the planet for the given day

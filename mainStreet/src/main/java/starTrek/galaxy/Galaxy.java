@@ -59,7 +59,7 @@ public class Galaxy {
 	 * Update the position of planets for a given day
 	 * @param elapsedDays the amounts of days elapsed
 	 */
-	public void updatePositions(Integer elapsedDays) {
+	public void updatePositions(Long elapsedDays) {
 		for(Planet planet : this.planets) {
 			planet.updatePosition(elapsedDays);
 		}
