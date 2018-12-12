@@ -12,6 +12,8 @@ import org.junit.Test;
 import starTrek.geometry.Line;
 
 /**
+ * Tests for the Line class
+ * 
  * @author Mauro Moltrasio
  *
  */
@@ -19,10 +21,10 @@ public class LineTest {
 
 	/**
 	 * Test method for {@link starTrek.geometry.Line#Line()}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testLine() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -40,10 +42,10 @@ public class LineTest {
 
 	/**
 	 * Test method for {@link starTrek.geometry.Line#Line(java.lang.Double, java.lang.Double)}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testLineDoubleDouble() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -61,10 +63,10 @@ public class LineTest {
 
 	/**
 	 * Test method for {@link starTrek.geometry.Line#Line(java.lang.Double, java.lang.Double, java.lang.Double, java.lang.Double)}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testLineDoubleDoubleDoubleDouble() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -97,10 +99,10 @@ public class LineTest {
 
 	/**
 	 * Test method for {@link starTrek.geometry.Line#setSlope(java.lang.Double)}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testSetSlope() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -127,10 +129,10 @@ public class LineTest {
 
 	/**
 	 * Test method for {@link starTrek.geometry.Line#setIntercept(java.lang.Double)}.
-	 * @throws SecurityException 
-	 * @throws NoSuchFieldException 
-	 * @throws IllegalAccessException 
-	 * @throws IllegalArgumentException 
+	 * @throws SecurityException security exception on field creation
+	 * @throws NoSuchFieldException exception on wrong field name
+	 * @throws IllegalAccessException exception on access to prohibited field
+	 * @throws IllegalArgumentException exception on illegal argument
 	 */
 	@Test
 	public void testSetIntercept() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
@@ -154,7 +156,7 @@ public class LineTest {
 	}
 
 	/**
-	 * Test method for {@link startTrek.geometry.Line#containsPoint(java.lang.Double, java.lang.Double)}
+	 * Test method for {@link starTrek.geometry.Line#containsPoint(java.lang.Double, java.lang.Double)}
 	 */
 	@Test
 	public void testContainsPoint() {

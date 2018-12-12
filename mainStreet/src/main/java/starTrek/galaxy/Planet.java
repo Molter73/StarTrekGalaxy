@@ -16,11 +16,23 @@ public class Planet {
     private Double yPos;
         
 	/**
+	 * 
+	 * @param speed the speed at which the planet rotates around the sun
+	 * @param distance the distance of the planet from the sun
+	 * @throws NullPointerException throws NullPointerException if any of the parameters is null
 	 * @deprecated Use {@link #Planet(String,Integer,Double)} instead
 	 */
 	public Planet(Integer speed, Double distance) throws NullPointerException{
 		this("", speed, distance);
 	}
+	/**
+	 * Creates a new planet with the given parameters
+	 * 
+	 * @param name a String containing the planets name
+	 * @param speed the speed at which the planet rotates around the sun
+	 * @param distance the distance of the planet from the sun
+	 * @throws NullPointerException throws NullPointerException if any of the parameters is null
+	 */
 	public Planet(String name, Integer speed, Double distance) throws NullPointerException{
         //  speed and distance can only be set at Planet creation time and are required.
         if(speed == null || distance == null || name == null)
@@ -125,6 +137,8 @@ public class Planet {
 	/**
 	 * Update the position of the planet for a given amount of days
 	 * elapsed from its creation
+	 * 
+	 * @param elapsedDays the amount of this passed since the creation of the galaxy
 	 */
 	public void updatePosition(Long elapsedDays) {
 		double traveledDegrees = this.getSpeed() * elapsedDays;

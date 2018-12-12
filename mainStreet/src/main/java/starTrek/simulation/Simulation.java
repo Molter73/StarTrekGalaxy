@@ -1,10 +1,4 @@
-/**
- * This class is responsible for running the simulation on 
- * the galaxy, to determine the weather conditions in different
- * days along the first 10 (Earth) years from the creation of the
- * galaxy (or the next 10 years after the next alignment of the three
- * major planets with the sun really, its just a matter of reference)
- */
+
 package starTrek.simulation;
 
 import starTrek.galaxy.Galaxy;
@@ -12,14 +6,22 @@ import starTrek.galaxy.NotEnoughPlanetsException;
 import starTrek.galaxy.Planet;
 
 /**
+ * This class is responsible for running the simulation on 
+ * the galaxy.
+ * 
+ * To determine the weather conditions in different
+ * days along the first 10 (Earth) years from the creation of the
+ * galaxy (or the next 10 years after the next alignment of the three
+ * major planets with the sun really, its just a matter of reference)
+ *
  * @author Mauro Moltrasio
  *
  */
 public class Simulation {
 
 	/**
-	 * @param args
-	 * @throws Exception 
+	 * @param args the execution parameters
+	 * @throws NotEnoughPlanetsException throws NotEnoughPlanetsException when there are no enough planets to predict the weather in this galaxy 
 	 */
 	public static void main(String[] args) throws NotEnoughPlanetsException {
 		/**

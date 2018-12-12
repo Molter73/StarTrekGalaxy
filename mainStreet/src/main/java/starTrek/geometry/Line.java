@@ -1,10 +1,9 @@
+
+package starTrek.geometry;
 /**
  * A simple class, meant to hold the necessary values 
  * to define a straight line in a 2 dimensional space
- */
-package starTrek.geometry;
-
-/**
+ *
  * @author Mauro Moltrasio
  *
  */
@@ -22,8 +21,8 @@ public class Line {
 		intercept = (double) 0;
 	}
 	/**
-	 * @param gradient
-	 * @param intercept
+	 * @param gradient the slope of this line
+	 * @param intercept the value of y at which this line crosses the vertical axis
 	 */
 	public Line(Double gradient, Double intercept) {
 		super();
@@ -124,6 +123,7 @@ public class Line {
 	 * so it will balance itself out.
 	 * @param xPos the position of the point along the x axis
 	 * @param yPos the position of the point along the y axis
+	 * @return true if the point is within the line
 	 */
 	public boolean containsPoint(Double xPos, Double yPos) {
 		if (Double.isInfinite(this.slope)) {

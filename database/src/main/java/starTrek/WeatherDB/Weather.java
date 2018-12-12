@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
+ * This class acts as a JPA entity for accessing the weather database.
+ * 
  * @author Mauro Moltrasio
  *
  */
@@ -19,14 +21,23 @@ public class Weather {
 	
 	protected Weather() {}
 
+	/**
+	 * Create a new definition of the weather conditions
+	 * for a given day, based on an existing weather desciption.
+	 * 
+	 * @param weather a Weather description object
+	 */
 	public Weather(Weather weather) {
 		this.day = weather.day;
 		this.weatherCondition = weather.weatherCondition;
 	}
 
 	/**
-	 * @param day
-	 * @param weatherCondition
+	 * Create a new definition of the weather conditions
+	 * for a given day.
+	 * 
+	 * @param day the day number for which this description is
+	 * @param weatherCondition a String describing the weather condition
 	 */
 	public Weather(Long day, String weatherCondition) {
 		this.day = day;

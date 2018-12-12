@@ -14,6 +14,8 @@ import starTrek.galaxy.Galaxy;
 import starTrek.galaxy.Planet;
 
 /**
+ * This class handles the REST api which access the weather database
+ * 
  * @author Mauro Moltrasio
  *
  */
@@ -22,7 +24,7 @@ public class DataCreator {
 	private static final Logger log = LoggerFactory.getLogger(DataCreator.class);
 	
 	/**
-	 * @param args
+	 * @param args the execution parameters for this instance
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(DataCreator.class);
