@@ -45,6 +45,7 @@ public class Weather {
 	}
 
 	/**
+	 * Get the day stored in this weather object
 	 * @return the day
 	 */
 	public Long getDay() {
@@ -52,6 +53,7 @@ public class Weather {
 	}
 
 	/**
+	 * The conditions associated with the day in this weather object
 	 * @return the weatherCondition
 	 */
 	public String getWeatherCondition() {

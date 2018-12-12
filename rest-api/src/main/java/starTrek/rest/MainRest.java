@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * This class handles the creation of a servlet application for the
- * REST api,
+ * REST api.
  * @author Mauro Moltrasio
  *
  */

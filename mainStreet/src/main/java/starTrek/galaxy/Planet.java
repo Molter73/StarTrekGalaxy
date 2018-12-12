@@ -4,6 +4,10 @@
 package starTrek.galaxy;
 
 /**
+ * A class representing a Planet with its speed and position
+ * 
+ * Contains methods for creating and manipulating planets.
+ * 
  * @author Mauro Moltrasio
  *
  */
@@ -48,12 +52,17 @@ public class Planet {
         this.yPos = 0d;
     }
     /**
+     * Get the planets x position
+     * 
      * @return the xPos
      */
     public Double getxPos() {
         return xPos;
     }
     /**
+     * The new planets x position
+     * Calculates the new distance from the sun
+     * 
      * @param xPos the xPos to set
      */
     public void setxPos(Double xPos) {
@@ -62,12 +71,17 @@ public class Planet {
         this.distance = Math.hypot(Math.abs(this.xPos), this.yPos);
     }
     /**
+     * Get the planets y position
+     * 
      * @return the yPos
      */
     public Double getyPos() {
         return yPos;
     }
     /**
+     * The new planets x position
+     * Calculates the new distance from the sun
+     * 
      * @param yPos the yPos to set
      */
     public void setyPos(Double yPos) {
@@ -76,12 +90,15 @@ public class Planet {
         this.distance = Math.hypot(Math.abs(this.xPos), this.yPos);
     }
     /**
+     * Get the planets rotation speed.
+     * 
      * @return the speed
      */
     public Integer getSpeed() {
         return speed;
     }
     /**
+     * Get the planets distance from the sun.
      * @return the distance
      */
     public Double getDistance() {

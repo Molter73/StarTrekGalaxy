@@ -4,6 +4,7 @@
 package starTrek.galaxy;
 
 /**
+ * An exception thrown when trying to do calculations with insufficient planets in a galaxy
  * @author Mauro Moltrasio
  *
  */
