@@ -32,3 +32,5 @@ hs_err_pid*
 *.properties
 
 DB_backup\.sql
+
+rest-api/src/main/resources/
