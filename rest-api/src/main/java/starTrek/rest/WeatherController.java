@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import starTrek.WeatherDB.Weather;
-import starTrek.WeatherDB.WeatherRepository;
+import starTrek.weather.Weather;
+import starTrek.weather.WeatherRepository;
 
 /**
  * A simple RestController class

@@ -15,8 +15,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * @author Mauro Moltrasio
  *
  */
-@EntityScan(basePackages = {"starTrek.WeatherDB"})
-@EnableJpaRepositories(basePackages={"starTrek.WeatherDB"}) 
+@EntityScan({"starTrek.weather"})
+@EnableJpaRepositories({"starTrek.weather"})
 @SpringBootApplication
 public class MainRest extends SpringBootServletInitializer{
 

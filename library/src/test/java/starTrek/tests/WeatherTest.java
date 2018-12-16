@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 
 import org.junit.Test;
 
-import starTrek.WeatherDB.Weather;
+import starTrek.weather.Weather;
 
 /**
  * Tests for the Weather class
@@ -22,7 +22,7 @@ import starTrek.WeatherDB.Weather;
 public class WeatherTest {
 
 	/**
-	 * Test method for {@link starTrek.WeatherDB.Weather#Weather(starTrek.WeatherDB.Weather)}.
+	 * Test method for {@link starTrek.weather.Weather#Weather(starTrek.weather.Weather)}.
 	 * @throws SecurityException security exception on field creation
 	 * @throws NoSuchFieldException exception on wrong field name
 	 * @throws IllegalAccessException exception on access to prohibited field
@@ -43,7 +43,7 @@ public class WeatherTest {
 	}
 	
 	/**
-	 * Test method for {@link starTrek.WeatherDB.Weather#Weather(java.lang.Long, java.lang.String)}.
+	 * Test method for {@link starTrek.weather.Weather#Weather(java.lang.Long, java.lang.String)}.
 	 * @throws SecurityException security exception on field creation
 	 * @throws NoSuchFieldException exception on wrong field name
 	 * @throws IllegalAccessException exception on access to prohibited field
@@ -64,7 +64,7 @@ public class WeatherTest {
 	}
 
 	/**
-	 * Test method for {@link starTrek.WeatherDB.Weather#getDay()}.
+	 * Test method for {@link starTrek.weather.Weather#getDay()}.
 	 */
 	@Test
 	public void testGetDay() {
@@ -74,7 +74,7 @@ public class WeatherTest {
 	}
 
 	/**
-	 * Test method for {@link starTrek.WeatherDB.Weather#getWeatherCondition()}.
+	 * Test method for {@link starTrek.weather.Weather#getWeatherCondition()}.
 	 */
 	@Test
 	public void testGetWeatherCondition() {
@@ -84,7 +84,7 @@ public class WeatherTest {
 	}
 
 	/**
-	 * Test method for {@link starTrek.WeatherDB.Weather#toString()}.
+	 * Test method for {@link starTrek.weather.Weather#toString()}.
 	 */
 	@Test
 	public void testToString() {

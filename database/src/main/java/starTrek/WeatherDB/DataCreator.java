@@ -8,10 +8,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import starTrek.galaxy.Galaxy;
 import starTrek.galaxy.Planet;
+import starTrek.weather.Weather;
+import starTrek.weather.WeatherRepository;
 
 /**
  * This class runs a simulation on the star trek galaxy and
@@ -20,6 +24,8 @@ import starTrek.galaxy.Planet;
  * @author Mauro Moltrasio
  *
  */
+@EntityScan({"starTrek.weather"})
+@EnableJpaRepositories({"starTrek.weather"})
 @SpringBootApplication
 public class DataCreator {
 	private static final Logger log = LoggerFactory.getLogger(DataCreator.class);

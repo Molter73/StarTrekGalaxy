@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>star-trek-galaxy</groupId>
-			<artifactId>main-street</artifactId>
+			<artifactId>library</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
