@@ -1,7 +1,7 @@
 /**
  * 
  */
-package starTrek.WeatherDB;
+package starTrek.weather;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
