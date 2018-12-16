@@ -12,7 +12,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>mainstreet</module>
+		<module>main-street</module>
 		<module>database</module>
 		<module>rest-api</module>
 		<module>library</module>
